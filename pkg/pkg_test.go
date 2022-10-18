@@ -17,7 +17,7 @@ var _ = Describe("Pkg", func() {
 	Describe("initialization tests", func() {
 		When("queue is initialized", func() {
 			It("has size 0", func() {
-				Expect(queue.Size).To(Equal(1))
+				Expect(queue.Size).To(Equal(0))
 			})
 		})
 	})
