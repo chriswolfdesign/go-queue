@@ -6,7 +6,7 @@ import (
 )
 
 var _ = Describe("GoQueue", func() {
-	It("Fails", func() {
+	It("should fail", func() {
 		Expect(false).To(BeTrue())
 	})
 })
