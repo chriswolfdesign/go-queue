@@ -21,4 +21,27 @@ var _ = Describe("Pkg", func() {
 			})
 		})
 	})
+
+	Describe("enqueue tests", func() {
+		When("enqueuing to empty queue", func() {
+			BeforeEach(func() {
+				queue.Enqueue(1)
+			})
+
+			It("has size one", func() {
+				Expect(queue.Size).To(Equal(1))
+			})
+		})
+
+		When("enqueuing to list with one element", func() {
+			BeforeEach(func() {
+				queue.Enqueue(1)
+				queue.Enqueue(2)
+			})
+
+			It("Has size two", func() {
+				Expect(queue.Size).To(Equal(2))
+			})
+		})
+	})
 })
