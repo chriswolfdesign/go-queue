@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestPkg(t *testing.T) {
+func TestQueue(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "Pkg Suite")
 }

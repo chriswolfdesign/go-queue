@@ -4,14 +4,14 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	. "go-queue/pkg"
+	queueLib "go-queue/queue"
 )
 
 var _ = Describe("Pkg", func() {
-	var queue Queue
+	var queue queueLib.Queue
 
 	BeforeEach(func() {
-		queue = Queue{}
+		queue = queueLib.Queue{}
 	})
 
 	Describe("initialization tests", func() {
