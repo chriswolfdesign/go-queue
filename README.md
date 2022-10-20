@@ -7,3 +7,7 @@ This repo is part of an on-GOing project where I implement data structures in th
 As always, any feedback is always appreciated.
 
 Contact: chriswolfdesign@gmail.com
+
+## Other projects
+
+- [Stack](https://www.github.com/chriswolfdesign/go-stack)
