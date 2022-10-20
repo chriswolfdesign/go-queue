@@ -3,9 +3,13 @@ package queue
 import "fmt"
 
 type Queue struct {
-	Size int
+	size int
 	head *queueNode
 	tail *queueNode
+}
+
+func (q *Queue) Size() int {
+	return q.size
 }
 
 func (q *Queue) Enqueue(element int) {
@@ -20,11 +24,11 @@ func (q *Queue) Enqueue(element int) {
 		q.tail = q.tail.next
 	}
 
-	q.Size++
+	q.size++
 }
 
 func (q *Queue) Peek() (int, error) {
-	if q.Size == 0 {
+	if q.size == 0 {
 		return 0, fmt.Errorf("cannot peek into empty queue")
 	}
 
@@ -32,18 +36,18 @@ func (q *Queue) Peek() (int, error) {
 }
 
 func (q *Queue) Dequeue() (int, error) {
-	if q.Size == 0 {
+	if q.size == 0 {
 		return 0, fmt.Errorf("cannot dequeue from empty queue")
 	}
 
 	val := q.head.val
 	q.head = q.head.next
 
-	if q.Size == 1 {
+	if q.size == 1 {
 		q.tail = nil
 	}
 
-	q.Size--
+	q.size--
 
 	return val, nil
 }

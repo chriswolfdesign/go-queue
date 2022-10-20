@@ -17,7 +17,7 @@ var _ = Describe("Pkg", func() {
 	Describe("initialization tests", func() {
 		When("queue is initialized", func() {
 			It("has size 0", func() {
-				Expect(queue.Size).To(Equal(0))
+				Expect(queue.Size()).To(Equal(0))
 			})
 		})
 	})
@@ -29,7 +29,7 @@ var _ = Describe("Pkg", func() {
 			})
 
 			It("has size one", func() {
-				Expect(queue.Size).To(Equal(1))
+				Expect(queue.Size()).To(Equal(1))
 				head, err := queue.Peek()
 				Expect(err).ToNot(HaveOccurred())
 				Expect(head).To(Equal(1))
@@ -43,7 +43,7 @@ var _ = Describe("Pkg", func() {
 			})
 
 			It("Has size two", func() {
-				Expect(queue.Size).To(Equal(2))
+				Expect(queue.Size()).To(Equal(2))
 				head, err := queue.Peek()
 				Expect(err).ToNot(HaveOccurred())
 				Expect(head).To(Equal(1))
@@ -108,7 +108,7 @@ var _ = Describe("Pkg", func() {
 				head, err := queue.Peek()
 				Expect(err).To(HaveOccurred())
 				Expect(head).To(Equal(0))
-				Expect(queue.Size).To(Equal(0))
+				Expect(queue.Size()).To(Equal(0))
 			})
 		})
 
@@ -126,7 +126,7 @@ var _ = Describe("Pkg", func() {
 				head, err := queue.Peek()
 				Expect(err).ToNot(HaveOccurred())
 				Expect(head).To(Equal(2))
-				Expect(queue.Size).To(Equal(2))
+				Expect(queue.Size()).To(Equal(2))
 			})
 		})
 	})
