@@ -31,6 +31,23 @@ func (q *Queue) Peek() (int, error) {
 	return q.head.val, nil
 }
 
+func (q *Queue) Dequeue() (int, error) {
+	if q.Size == 0 {
+		return 0, fmt.Errorf("cannot dequeue from empty queue")
+	}
+
+	val := q.head.val
+	q.head = q.head.next
+
+	if q.Size == 1 {
+		q.tail = nil
+	}
+
+	q.Size--
+
+	return val, nil
+}
+
 type queueNode struct {
 	val  int
 	next *queueNode
